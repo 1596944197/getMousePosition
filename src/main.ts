@@ -1,5 +1,6 @@
 import { app, BrowserWindow } from "electron";
 import * as path from "path";
+import { getMousePosition } from "./module/getMousePosition";
 
 function createWindow() {
   // Create the browser window.
@@ -10,6 +11,8 @@ function createWindow() {
     },
     width: 800,
   });
+
+  getMousePosition(mainWindow);
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, "../index.html"));
