@@ -12,6 +12,7 @@ function createWindow() {
       preload: path.join(__dirname, "preload.js"),
     },
     frame: false,
+    transparent: true
   });
   mainWindow.setBounds({
     x: 0,
