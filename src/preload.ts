@@ -1,5 +1,8 @@
 import { contextBridge, ipcRenderer } from "electron";
 
-contextBridge.exposeInMainWorld("getPosition", (callback) =>
-  ipcRenderer.on('update-position', callback)
-);
+contextBridge.exposeInMainWorld("getPosition", () => {
+  ipcRenderer.send("get-position");
+});
+contextBridge.exposeInMainWorld("updatePosition", (cb) => {
+  ipcRenderer.on("update-position", cb);
+});

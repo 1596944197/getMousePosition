@@ -1,3 +1,4 @@
 interface Window {
-  getPosition: Function;
+  getPosition: Function
+  updatePosition: Function
 }

@@ -11,7 +11,7 @@ function createWindow() {
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
     },
-    frame: false
+    frame: false,
   });
   mainWindow.setBounds({
     x: 0,
