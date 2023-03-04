@@ -10,7 +10,7 @@ window.updatePosition((ev, { x, y }) => {
   const top = y + height >= window.innerHeight ? `${window.innerHeight - height}px` : `${y}px`
   tooltip.style.left = left
   tooltip.style.top = top
-  tooltip.innerHTML = `x<${x}\xa0\xa0 y<${y}`
+  tooltip.innerHTML = `x=${x}\xa0\xa0 y=${y}`
 });
 
 function run() {
