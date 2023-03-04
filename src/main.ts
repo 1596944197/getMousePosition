@@ -1,19 +1,24 @@
-import { exec } from "child_process";
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow, screen } from "electron";
 import * as path from "path";
 import { getMousePosition } from "./module/getMousePosition";
 
-exec(`cd ${__dirname} && cd .. && tsc-w`)
-
 function createWindow() {
   // Create the browser window.
+  const display = screen.getPrimaryDisplay()
+  const width = display.bounds.width
+  const height = display.bounds.height
   const mainWindow = new BrowserWindow({
-    height: 600,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
     },
-    width: 800,
+    frame: false
   });
+  mainWindow.setBounds({
+    x: 0,
+    y: 0,
+    width,
+    height
+  })
 
   getMousePosition(mainWindow);
 
@@ -21,7 +26,7 @@ function createWindow() {
   mainWindow.loadFile(path.join(__dirname, "../index.html"));
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 }
 
 // This method will be called when Electron has finished

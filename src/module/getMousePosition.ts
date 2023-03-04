@@ -5,10 +5,10 @@ export function getMousePosition(
   function run() {
     setTimeout(() => {
       const { x, y } = screen.getCursorScreenPoint();
-      mainWindow.webContents.send('update-position', { x, y });
-      run();
-    }, 60);
+      mainWindow.webContents.send('update-position', { x, y })
+      run()
+    }, 1000);
   }
 
-  run();
+  run()
 }
