@@ -1,4 +1,4 @@
-import { ipcMain, screen } from "electron";
+import { globalShortcut, ipcMain, screen } from "electron";
 export function getMousePosition(
   mainWindow: Electron.CrossProcessExports.BrowserWindow
 ): void {
@@ -11,5 +11,11 @@ export function getMousePosition(
 
   ipcMain.on('get-position', () => {
     run()
+  })
+
+  mainWindow.setIgnoreMouseEvents(true)
+
+  globalShortcut.register('Alt+X', () => {
+    mainWindow.focus()
   })
 }

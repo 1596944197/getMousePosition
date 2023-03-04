@@ -1,6 +1,5 @@
 const tooltip: HTMLDivElement = document.querySelector('#tooltip')
 
-
 const { width, height } = tooltip.getBoundingClientRect();
 window.updatePosition((ev, { x, y }) => {
   const left = x + width >= window.innerWidth ? `${window.innerWidth - width}px` : `${x}px`

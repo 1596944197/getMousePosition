@@ -20,7 +20,6 @@ function createWindow() {
     width,
     height
   })
-  mainWindow.setIgnoreMouseEvents(true)
 
   getMousePosition(mainWindow);
 
