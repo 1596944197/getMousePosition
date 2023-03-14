@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A minimal Electron application written with Typescript",
   "main": "./dist/main.js",
+  "author":"MEI 1596944197@qq.com",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
@@ -20,7 +21,6 @@
     "demo",
     "typescript"
   ],
-  "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
     "@electron-forge/cli": "^6.0.5",
